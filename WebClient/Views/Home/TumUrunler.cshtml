@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "TumUrunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tüm Ürünler</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ürün Id</th>
+            <th>Ürün Ad</th>
+            <th>Ürün Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.plist)
+            {
+            <tr>
+                <td>@item.UrunID</td>
+                <td>@item.UrunAd</td>
+                <td>@string.Format("{0:c}", item.UrunFiyat)</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
